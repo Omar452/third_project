@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <!-- HEAD -->
+    <head lang="fr">
+        <title>VéloCity - Location de vélos dans Lyon</title>
+
+        <!-- META -->
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="Vélocity est un site de location de vélo dans la ville de Lyon.">
+        <!-- META -->
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="style.css"/>
+        <!-- CSS -->
+
+        <!-- FONTS -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+        <!-- FONTS -->
+
+        <!-- API LEAFLET -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+        crossorigin=""></script>
+        <!-- API LEAFLET -->
+    
+    </head>
+    <!-- HEAD -->
+
+    <!-- BODY -->
+    <body>
+
+        <!-- HEADER -->
+        <header id="header">
+            <div class="logo">
+                <h1>VéloCity</h1>
+                <h2>...location de vélos sur Lyon</h2>
+            </div>
+            <div id="menu">
+                <ul>
+                    <li><a href="#header">Accueil</a></li>
+                    <li><a href="#hr">Réservation</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                </ul>
+            </div>
+
+        </header>
+        <!-- HEADER -->
+
+        <!-- DIAPORAMA -->
+        <div id="diaporama">
+            <button id="previous-button">&lt;</button>
+            <button id="next-button">&gt;</button>
+                <figure id="imgDiapo1" class="imgDiapo">
+                    <img class="images" src="src/diaporama_image1.jpg" alt="location de velos">
+                    <figcaption class="caption">Bienvenue sur le site de VeloCity! <br>Veuillez suivre les étapes suivantes pour réserver un vélo.</figcaption>
+                </figure>
+
+                <figure id="imgDiapo2" class="imgDiapo">
+                        <img class="images" src="src/diaporama_image2.jpg" alt="entrer emplacement">
+                        <figcaption class="caption">1: Selectionnez la station de votre choix</figcaption>
+                </figure>
+
+                <figure id="imgDiapo3" class="imgDiapo">
+                        <img class="images" src="src/diaporama_image3.jpg" alt="formulaire de reservation">
+                        <figcaption class="caption">2: Completez le formulaire de réservation</figcaption>
+                </figure>
+
+                <figure id="imgDiapo4" class="imgDiapo">
+                        <img class="images" src="src/diaporama_image4.jpg" alt="personne qui roule en vélo">
+                        <figcaption class="caption">3: Récupérez votre vélo et profitez pleinement de votre location.</figcaption>
+                </figure>
+        </div>
+        <!-- DIAPORAMA -->
+
+        <hr id="hr">
+
+        <!-- RESERVATION -->
+        <div id="reservation">
+            <div id = "div-map">
+                <div id="map"></div>
+
+                <div id="timer-div">
+                    <p id="timer"></p>
+                    <button id="annuler">Annuler</button>
+                </div>
+            </div>
+
+            <div id="formulaire">
+                <p id="msg-form">Veuillez selectionner la station de votre choix afin de réserver un vélo.</p>
+                <div id = "resa-form">
+                    <p id="txt-station"></p>
+                    <p id="txt-adresse"></p>
+                    <div id="dispo"><p>Vélos disponibles:&nbsp;</p><p id="txt-dispo"></p></div>
+                    <p id="txt-statut"></p>
+                    
+                    <form id="form">
+                        <label for="nom">Nom</label>
+                        <input id="nom" type="text" placeholder="Nom" required><br>
+                        <label for="prenom">Prénom</label> 
+                        <input id="prenom" type="text" placeholder="Prénom" required><br>
+                        <div id="canvas-div">
+                            <canvas id="canvas" width = "200" height="50"></canvas>
+                            <input type="reset" id="effacer" value="Effacer">
+                        </div>
+                        <input id="submit" type="submit" value="Réserver">
+                        <p id="error-msg"></p>                       
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- RESERVATION -->
+        
+
+        <footer id="footer">
+            <h3>VeloCity</h3>
+            <p>2019 - Site fictif de réservation de vélo / velocity@fictif.fr</p>
+        </footer>
+
+        <script src="AjaxGetRequest.js"></script>
+        <script src="Diaporama.js"></script>
+        <script src="Timer.js"></script>
+        <script src="Canvas.js"></script>
+        <script src="Map.js"></script>
+        <script src="main.js"></script>
+    </body>
+    <!-- BODY -->
+</html>
